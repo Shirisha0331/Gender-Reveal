@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gender Reveal RSVP</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffe6f0, #e6f7ff);
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ff4da6;
+}
+
+.details {
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.quote {
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.form-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #ff4da6;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+
+<script>
+function toggleAttendance(value) {
+    if (value === "yes") {
+        document.getElementById("countSection").classList.remove("hidden");
+        document.getElementById("yesButton").classList.remove("hidden");
+        document.getElementById("noButton").classList.add("hidden");
+    } else {
+        document.getElementById("countSection").classList.add("hidden");
+        document.getElementById("yesButton").classList.add("hidden");
+        document.getElementById("noButton").classList.remove("hidden");
+    }
+}
+
+function submitForm() {
+    alert("Response submitted successfully!");
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="IMAGE_URL_HERE" alt="Gender Reveal Image">
+
+    <h1>Gender Reveal Party 🎉</h1>
+
+    <div class="quote">
+        We are inviting you to join us to reveal the Gender of our little miracle.<br>
+        Will it be Little Krishna or Little Radha, we have no clue...<br>
+        Let's find out and celebrate together.
+    </div>
+
+    <div class="details">
+        <strong>Parents to be:</strong> Anil & Shirisha <br><br>
+        <strong>Date:</strong> Friday, 1st May 2026 <br>
+        <strong>Time:</strong> 5:30 PM to 10 PM <br><br>
+        <strong>Location:</strong><br>
+        6002 Blue Ridge Drive, Highlands Ranch <br>
+        Gate Code: 5524
+    </div>
+
+    <div class="form-box">
+        <h2>RSVP</h2>
+
+        <input type="text" placeholder="Your Name" required><br>
+
+        <label>Will you be attending?</label><br>
+
+        <input type="radio" name="attend" value="yes" onclick="toggleAttendance('yes')"> Yes
+        <input type="radio" name="attend" value="no" onclick="toggleAttendance('no')"> No
+
+        <div id="countSection" class="hidden">
+            <input type="number" placeholder="Number of people attending">
+        </div>
+
+        <button id="yesButton" class="hidden" onclick="submitForm()">Count Us In 🎉</button>
+        <button id="noButton" class="hidden" onclick="submitForm()">Submit</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
